@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SirpoLR4.Models.Charter>
+
+<h2>Чартеры</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Маршрут</th>
+            <th>Цена</th>
+            <th>Дата</th>
+            <th>Создано</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var charter in Model)
+        {
+            <tr>
+                <td>@charter.CititesPath</td>
+                <td>@charter.Price</td>
+                <td>@charter.CharterDateTime</td>
+                <td>@charter.CreatedAt</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@charter.Id" class="btn btn-primary">Детали</a>
+                    <a asp-action="Edit" asp-route-id="@charter.Id" class="btn btn-primary">Редактировать</a>
+                    <a asp-action="Delete" asp-route-id="@charter.Id" class="btn btn-danger">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-success">Создать новый чартер</a>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
