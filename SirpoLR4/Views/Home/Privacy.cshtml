@@ -1,6 +1,75 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Политика конфиденциальности";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<div class="container mt-4">
+    <!-- Основная информация о компании -->
+    <div class="text-center mb-4">
+        <h2>DonChart</h2>
+        <p>Мы - ведущая компания, занимающаяся чартовыми рейсами. Наша цель - обеспечить комфортные и безопасные путешествия для наших клиентов по всему миру.</p>
+    </div>
+
+    <!-- Информация о сборе данных -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="charter-card">
+                <div class="card-body">
+                    <h5 class="card-title">Сбор информации</h5>
+                    <p class="card-text">Мы собираем информацию, такую как ваше имя, адрес электронной почты и данные о поездках, для предоставления услуг и улучшения нашего сервиса.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Информация о защите данных -->
+        <div class="col-md-6">
+            <div class="charter-card">
+                <div class="card-body">
+                    <h5 class="card-title">Защита данных</h5>
+                    <p class="card-text">Мы принимаем все необходимые меры для защиты вашей информации. Ваши данные шифруются и хранятся в безопасном окружении.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Информация о правах -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h5 class="text-center">Ваши права</h5>
+            <p>Вы имеете право запрашивать доступ к вашим данным, их исправление или удаление. Свяжитесь с нами для получения дополнительной информации.</p>
+        </div>
+
+        <!-- Контактная информация -->
+        <div class="col-md-6">
+            <h5 class="text-center">Контактная информация</h5>
+            <p>Если у вас есть вопросы о нашей политике конфиденциальности, пожалуйста, свяжитесь с нами по адресу электронной почты: <strong>support@chartercompany.com</strong>.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        color: #003049;
+    }
+
+    h1, h2, h5 {
+        color: #C1121F;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .card {
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
