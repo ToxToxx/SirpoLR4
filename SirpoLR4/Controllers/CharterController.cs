@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using SirpoLR4.DataAccess;
 using SirpoLR4.Models;
-using System.Threading.Tasks;
 
 namespace SirpoLR4.Controllers
 {
@@ -15,12 +14,36 @@ namespace SirpoLR4.Controllers
             _context = context;
         }
 
-        // GET: CharterController
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, string searchField)
         {
-            var charters = await _context.Charters.ToListAsync();
-            return View(charters);
+            var charters = _context.Charters.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString) && searchField == "OrderNumber")
+            {
+                if (int.TryParse(searchString, out int orderNumber))
+                {
+                    charters = charters.Skip(orderNumber - 1).Take(1); // Получаем чартера по порядковому номеру
+                }
+            }
+            else if (!string.IsNullOrEmpty(searchString))
+            {
+                switch (searchField)
+                {
+                    case "CititesPath":
+                        charters = charters.Where(c => c.CititesPath.Contains(searchString));
+                        break;
+                    case "Price":
+                        if (int.TryParse(searchString, out int price))
+                        {
+                            charters = charters.Where(c => c.Price == price);
+                        }
+                        break;
+                }
+            }
+
+            return View(await charters.ToListAsync());
         }
+
 
         // GET: CharterController/Details/5
         public async Task<IActionResult> Details(Guid id)
