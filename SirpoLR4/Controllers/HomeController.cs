@@ -17,10 +17,16 @@ namespace SirpoLR4.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var charters = await _context.Charters.AsNoTracking().ToListAsync();
-            return View(charters);
+            var charters = _context.Charters.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                charters = charters.Where(c => c.CititesPath.Contains(searchString)); // Предположим, что у вас есть поле "Name"
+            }
+
+            return View(charters.ToList());
         }
 
         public IActionResult Privacy()
