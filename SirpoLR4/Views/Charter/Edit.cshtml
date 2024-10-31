@@ -1,0 +1,21 @@
+﻿@model SirpoLR4.Models.Charter
+
+<h2>Редактировать чартер</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Маршрут</label>
+        <input asp-for="CititesPath" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Цена</label>
+        <input asp-for="Price" type="number" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Дата чартера</label>
+        <input asp-for="CharterDateTime" type="datetime-local" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>
