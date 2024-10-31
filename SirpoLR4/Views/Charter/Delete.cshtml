@@ -1,0 +1,17 @@
+﻿@model SirpoLR4.Models.Charter
+
+<h2>Удалить чартер</h2>
+
+<p>Вы уверены, что хотите удалить этот чартер?</p>
+
+<div>
+    <p><strong>Маршрут:</strong> @Model.CititesPath</p>
+    <p><strong>Цена:</strong> @Model.Price</p>
+    <p><strong>Дата чартера:</strong> @Model.CharterDateTime</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>
