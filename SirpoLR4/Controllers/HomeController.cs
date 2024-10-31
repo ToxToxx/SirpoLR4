@@ -23,7 +23,7 @@ namespace SirpoLR4.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                charters = charters.Where(c => c.CititesPath.Contains(searchString)); // Предположим, что у вас есть поле "Name"
+                charters = charters.Where(c => c.CititesPath.Contains(searchString));
             }
 
             return View(charters.ToList());

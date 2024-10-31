@@ -15,7 +15,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>№</th> <!-- Заголовок для номера по порядку -->
+            <th>№</th> 
             <th>Маршрут</th>
             <th>Цена</th>
             <th>Дата</th>
@@ -28,7 +28,7 @@
         {
             var charter = Model.ElementAt(i);
             <tr>
-                <td>@(i + 1)</td> <!-- Номер по порядку -->
+                <td>@(i + 1)</td> 
                 <td>@charter.CititesPath</td>
                 <td>@charter.Price</td>
                 <td>@charter.CharterDateTime.ToString("yyyy-MM-dd HH:mm")</td>

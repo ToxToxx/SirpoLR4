@@ -22,7 +22,7 @@ namespace SirpoLR4.Controllers
             {
                 if (int.TryParse(searchString, out int orderNumber))
                 {
-                    charters = charters.Skip(orderNumber - 1).Take(1); // Получаем чартера по порядковому номеру
+                    charters = charters.Skip(orderNumber - 1).Take(1); 
                 }
             }
             else if (!string.IsNullOrEmpty(searchString))
@@ -70,7 +70,7 @@ namespace SirpoLR4.Controllers
             {
                 charter.Id = Guid.NewGuid();
                 charter.CreatedAt = DateTime.UtcNow;
-                charter.CharterDateTime = charter.CharterDateTime.ToUniversalTime(); // Преобразование в UTC
+                charter.CharterDateTime = charter.CharterDateTime.ToUniversalTime(); 
                 _context.Charters.Add(charter);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -100,10 +100,8 @@ namespace SirpoLR4.Controllers
             {
                 try
                 {
-                    // Сохраняем изначальное значение CreatedAt
                     charter.CreatedAt = (await _context.Charters.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id)).CreatedAt;
 
-                    // Преобразуем CharterDateTime в UTC
                     charter.CharterDateTime = charter.CharterDateTime.ToUniversalTime();
 
                     _context.Update(charter);
@@ -142,7 +140,6 @@ namespace SirpoLR4.Controllers
                 _context.Charters.Remove(charter);
                 await _context.SaveChangesAsync();
 
-                // Устанавливаем сообщение об успешном удалении
                 TempData["SuccessMessage"] = "Чартер успешно удален.";
             }
 

@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: #f0e9cc; /* Slightly lighter background */
+    background-color: #f0e9cc; 
     color: #5f4339;
     font-family: Arial, sans-serif;
     margin-bottom: 60px;
@@ -42,7 +42,7 @@ body {
 }
 
 .charter-card {
-    background-color: #fefae0; /* Lighter card background */
+    background-color: #fefae0; 
     border: none;
     border-radius: 10px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -75,12 +75,12 @@ body {
     }
 
 .text-muted {
-    color: #7b9a6e !important; /* Calmer green tone */
+    color: #7b9a6e !important; 
 }
 
 /* Кнопки и элементы формы */
 .btn-primary {
-    background-color: #7b9a6e; /* Softer green */
+    background-color: #7b9a6e; 
     border-color: #7b9a6e;
     color: #fefae0;
 }
@@ -117,7 +117,7 @@ table {
 }
 
     table thead {
-        background-color: #6c8a61; /* Header row with soft green */
+        background-color: #6c8a61; 
         color: #4e372e;
     }
 
@@ -125,7 +125,7 @@ table {
         padding: 12px 15px;
         text-align: left;
         color: #fefae0;
-        border-bottom: 1px solid #e0d9b4; /* Light border for rows */
+        border-bottom: 1px solid #e0d9b4; 
     }
 
     table th {
@@ -133,11 +133,11 @@ table {
     }
 
     table tbody tr:nth-child(even) {
-        background-color: #5f4339; /* Light background for even rows */
+        background-color: #5f4339; 
     }
 
     table tbody tr:hover {
-        background-color: #d4a373; /* Dark orange for row hover */
+        background-color: #d4a373; 
     }
 
     table td {
