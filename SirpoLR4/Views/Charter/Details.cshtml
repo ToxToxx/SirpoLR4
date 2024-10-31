@@ -1,0 +1,13 @@
+﻿@model SirpoLR4.Models.Charter
+
+<h2>Детали чартера</h2>
+
+<div>
+    <h4>Маршрут: @Model.CititesPath</h4>
+    <p>Цена: @Model.Price</p>
+    <p>Дата чартера: @Model.CharterDateTime</p>
+    <p>Создано: @Model.CreatedAt</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a> |
+<a asp-action="Index">Вернуться к списку</a>
