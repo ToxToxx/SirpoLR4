@@ -1,8 +1,29 @@
-﻿@{
+﻿@model IEnumerable<SirpoLR4.Models.Charter>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-4">
+    <h1 class="display-4" ;">РАСПИСАНИЕ ЧАРТЕРОВ</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var charter in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm charter-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Маршрут: @charter.CititesPath</h5>
+                        <p class="card-text">
+                            <strong>Цена:</strong> @charter.Price руб.<br />
+                            <strong>Дата чартера:</strong> @charter.CharterDateTime.ToUniversalTime().ToString("yyyy-MM-dd HH:mm")<br />
+                            <small class="text-muted">Создано: @charter.CreatedAt.ToUniversalTime().ToString("yyyy-MM-dd HH:mm")</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
