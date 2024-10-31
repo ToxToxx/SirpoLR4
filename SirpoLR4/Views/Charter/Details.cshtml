@@ -2,12 +2,14 @@
 
 <h2>Детали чартера</h2>
 
-<div>
+<div class="mb-4">
     <h4>Маршрут: @Model.CititesPath</h4>
     <p>Цена: @Model.Price</p>
     <p>Дата чартера: @Model.CharterDateTime</p>
     <p>Создано: @Model.CreatedAt</p>
 </div>
 
-<a asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a> |
-<a asp-action="Index">Вернуться к списку</a>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редактировать</a>
+    <a asp-action="Index" class="btn btn-secondary">Вернуться к списку</a>
+</div>

@@ -7,7 +7,7 @@
             <th>Маршрут</th>
             <th>Цена</th>
             <th>Дата</th>
-            <th>Создано</th>
+            <th>Действия</th>
             <th></th>
         </tr>
     </thead>
@@ -18,7 +18,6 @@
                 <td>@charter.CititesPath</td>
                 <td>@charter.Price</td>
                 <td>@charter.CharterDateTime</td>
-                <td>@charter.CreatedAt</td>
                 <td>
                     <a asp-action="Details" asp-route-id="@charter.Id" class="btn btn-primary">Детали</a>
                     <a asp-action="Edit" asp-route-id="@charter.Id" class="btn btn-primary">Редактировать</a>

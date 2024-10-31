@@ -7,26 +7,59 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SirpoLR4.styles.css" asp-append-version="true" />
+    <style>
+        header {
+            background-color: #fdf0d5; /* Цвет фона хедера из CSS */
+            color: #5f4339; /* Цвет текста из CSS */
+        }
+
+        .navbar-nav .nav-link {
+            color: #5f4339; /* Цвет текста ссылок */
+            transition: color 0.3s; /* Плавный переход цвета */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #C1121F; /* Цвет текста при наведении */
+            }
+
+        footer {
+            background-color: #fdf0d5; /* Цвет фона футера из CSS */
+            color: #5f4339; /* Цвет текста футера из CSS */
+            padding: 20px 0; /* Отступы */
+        }
+
+            footer a {
+                color: #5f4339; /* Цвет ссылок в футере */
+                transition: color 0.3s; /* Плавный переход цвета */
+            }
+
+                footer a:hover {
+                    color: #C1121F; /* Цвет ссылки при наведении */
+                }
+
+        .footer {
+            border-top: 1px solid #7b9a6e; /* Линия над футером */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-transparent border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SirpoLR4</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Клиент</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Клиент</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Charter" asp-action="Index">Администратор</a>
+                            <a class="nav-link" asp-area="" asp-controller="Charter" asp-action="Index">Администратор</a>
                         </li>
                     </ul>
                 </div>
@@ -39,8 +72,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="footer text-muted">
+        <div class="container text-center">
             &copy; 2024 - SirpoLR4 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
