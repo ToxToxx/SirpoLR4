@@ -1,9 +1,21 @@
 ﻿@model IEnumerable<SirpoLR4.Models.Charter>
 
 <h2>Чартеры</h2>
+
+<form method="get" class="mb-4 d-flex align-items-center" style="gap: 10px;">
+    <select name="searchField" class="form-control" style="width: 150px;">
+        <option value="OrderNumber">Номер по порядку</option> <!-- Новое значение для поиска -->
+        <option value="CititesPath">Маршрут</option>
+        <option value="Price">Цена</option>
+    </select>
+    <input type="text" name="searchString" placeholder="Введите значение для поиска" class="form-control" style="width: 200px;" />
+    <button type="submit" class="btn btn-primary">Поиск</button>
+</form>
+
 <table class="table">
     <thead>
         <tr>
+            <th>№</th> <!-- Заголовок для номера по порядку -->
             <th>Маршрут</th>
             <th>Цена</th>
             <th>Дата</th>
@@ -12,12 +24,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var charter in Model)
+        @for (int i = 0; i < Model.Count(); i++)
         {
+            var charter = Model.ElementAt(i);
             <tr>
+                <td>@(i + 1)</td> <!-- Номер по порядку -->
                 <td>@charter.CititesPath</td>
                 <td>@charter.Price</td>
-                <td>@charter.CharterDateTime</td>
+                <td>@charter.CharterDateTime.ToString("yyyy-MM-dd HH:mm")</td>
                 <td>
                     <a asp-action="Details" asp-route-id="@charter.Id" class="btn btn-primary">Детали</a>
                     <a asp-action="Edit" asp-route-id="@charter.Id" class="btn btn-primary">Редактировать</a>
@@ -27,6 +41,7 @@
         }
     </tbody>
 </table>
+
 <a asp-action="Create" class="btn btn-success">Создать новый чартер</a>
 
 @if (TempData["SuccessMessage"] != null)
