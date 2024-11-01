@@ -27,7 +27,8 @@
                         <h5 class="card-title">Маршрут: @charter.CititesPath</h5>
                         <p class="card-text">
                             <strong>Цена:</strong> @charter.Price руб.<br />
-                            <strong>Дата чартера:</strong> @charter.CharterDateTime.ToUniversalTime().ToString("yyyy-MM-dd HH:mm")<br />
+                            <strong>Дата чартера (UTC):</strong> @charter.CharterDateTime.ToUniversalTime().ToString("yyyy-MM-dd HH:mm")<br />
+                            <strong>Дата чартера (МСК):</strong> @TimeZoneInfo.ConvertTimeFromUtc(charter.CharterDateTime, TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time")).ToString("yyyy-MM-dd HH:mm")<br />
                         </p>
                     </div>
                 </div>

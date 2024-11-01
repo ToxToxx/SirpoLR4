@@ -4,7 +4,7 @@
 
 <form method="get" class="mb-4 d-flex align-items-center" style="gap: 10px;">
     <select name="searchField" class="form-control" style="width: 150px;">
-        <option value="OrderNumber">Номер по порядку</option> <!-- Новое значение для поиска -->
+        <option value="OrderNumber">Номер по порядку</option>
         <option value="CititesPath">Маршрут</option>
         <option value="Price">Цена</option>
     </select>
@@ -15,12 +15,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>№</th> 
+            <th>№</th>
             <th>Маршрут</th>
             <th>Цена</th>
-            <th>Дата</th>
+            <th>Время UTC</th>
+            <th>Время (МСК)</th> 
             <th>Действия</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -28,10 +28,11 @@
         {
             var charter = Model.ElementAt(i);
             <tr>
-                <td>@(i + 1)</td> 
+                <td>@(i + 1)</td>
                 <td>@charter.CititesPath</td>
                 <td>@charter.Price</td>
-                <td>@charter.CharterDateTime.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@charter.CharterDateTime.ToString("yyyy-MM-dd HH:mm")</td> 
+                <td>@TimeZoneInfo.ConvertTimeFromUtc(charter.CharterDateTime, TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time")).ToString("yyyy-MM-dd HH:mm")</td> 
                 <td>
                     <a asp-action="Details" asp-route-id="@charter.Id" class="btn btn-primary">Детали</a>
                     <a asp-action="Edit" asp-route-id="@charter.Id" class="btn btn-primary">Редактировать</a>
